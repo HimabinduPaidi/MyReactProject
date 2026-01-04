@@ -1,8 +1,13 @@
 import { Client, Account } from "appwrite";
-import { APPWRITE_API_ENDPOINT, APPWRITE_API_PROJECT_ID } from "../utilis/appwrite/constants";
 
-const appwriteClient = new Client()
-    .setEndpoint(APPWRITE_API_ENDPOINT) // Your API Endpoint
-    .setProject(APPWRITE_API_PROJECT_ID); // Your project ID
+const client = new Client();
 
-export default appwriteClient;
+client
+  .setEndpoint("https://sgp.cloud.appwrite.io/v1")
+  .setProject("692d272400201999cad0");
+
+export const account = new Account(client);
+
+
+
+export default client;

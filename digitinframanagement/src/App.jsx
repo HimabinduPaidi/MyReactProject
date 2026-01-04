@@ -1,19 +1,30 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import SchoolDashboard from "./pages/dashboards/SchoolDashboard";
+import DistrictDashboard from "./pages/dashboards/DistrictDashboard";
+import TechnicianDashboard from "./pages/dashboards/TechnicianDashboard";
 
-const App = () => {
+function App() {
   return (
-    <div className="text-center">
-      <h1 className="text-6xl font-bold text-slate-800 animate-slide-color">
-        Digital Infrastructure Management
-      </h1>
-      <p className="mt-4 text-slate-600 text-lg animate-fade-in">
-        A centralized platform to manage, monitor, and improve
-        government school digital infrastructure efficiently.
-      </p>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/school-dashboard" element={<SchoolDashboard />} />
+        <Route path="/district-dashboard" element={<DistrictDashboard />} />
+        <Route path="/technician-dashboard" element={<TechnicianDashboard />} />
+      </Routes>
+    </>
   );
-};
+}
 
 export default App;
+
+
 
 
